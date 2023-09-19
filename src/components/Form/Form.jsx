@@ -1,11 +1,13 @@
 import React from 'react'
+import { uid } from 'uid';
 
 export default function Form({onAddActivity}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        const activity = Object.fromEntries(formData);
-       onAddActivity(activity);
+        const data = Object.fromEntries(formData);
+        const activity = {id: uid(), name: data.name, isForGoodWeather: data.forGoodWeather === "on"? true : false };
+       onAddActivity(activity)
        event.target.reset();
     }
     
@@ -17,8 +19,8 @@ export default function Form({onAddActivity}) {
         <input type="text" name="name" required></input>
         </fieldset>
         <fieldset>
-        <label htmlFor="checkbox">Good Weather Activity:</label>
-        <input type="checkbox" name="checkbox"></input>
+        <label htmlFor="forGoodWeather">Good Weather Activity:</label>
+        <input type="checkbox" name="forGoodWeather"></input>
         </fieldset>
         <button>Submit</button>
     </form>
