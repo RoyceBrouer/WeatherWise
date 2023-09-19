@@ -10,10 +10,14 @@ const [activities, setActivities] = useLocalStorage("activities", []);
 const handleAddActivity = (activity) => {
   setActivities([...activities, { id: uid(), ...activity}])
 }
+
+
+
+//activities.filter((activity) => activity.forGoodWeather.checked)
   return (
     <>   
       <Form onAddActivity={handleAddActivity}/>
-      <List activities={activities} />
+      <List activities={activities} title={listTitle} />
     </>
   )
 }
