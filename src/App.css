@@ -15,8 +15,13 @@
 .App__container {
   max-width: 600px;
   margin: auto;
-  background-color: #fff;
+  backdrop-filter: blur(8px);
   padding: 16px;
   border-radius: 32px;
-  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.App__weatherTitle {
+  text-align: center;
+  font-size: 64px;
 }

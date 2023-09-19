@@ -15,3 +15,7 @@ button {
   border-radius: 8px;
   font-weight: 600;
 }
+
+body {
+  font-family: "Helvetica"
+}
