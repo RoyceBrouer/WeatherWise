@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Form from './components/Form/Form'
 import List from './components/List/List';
@@ -12,21 +12,33 @@ const [listTitle, setListTitle] = useState("");
 const goodWeatherActivities = activities.filter((activity) =>activity.isForGoodWeather) 
 const badWeatherActivities = activities.filter((activity) =>activity.isForGoodWeather === false)
 
+const fetchWeather = async () => {
+  const response = await fetch("https://example-apis.vercel.app/api/weather/sahara");
+  const weatherRainforest = await response.json();
+  setWeather(weatherRainforest)
+}
+
 useEffect(() => {
-  const fetchWeather = async () => {
-    const response = await fetch("https://example-apis.vercel.app/api/weather/sahara");
-    const weatherRainforest = await response.json();
-    console.log(weatherRainforest);
-    setWeather(weatherRainforest)
-  }
   fetchWeather()
+
+  const timer = setInterval(() => {
+    fetchWeather()
+  }, 5000);
+
+  return () => {
+    clearInterval(timer);
+  };
 }, []);
 
 
 
 const handleAddActivity = (activity) => {
-  console.log(activity);
   setActivities([...activities, activity])
+}
+
+const handleDeleteActivity = (id) => {
+  console.log("id", id)
+  setActivities(activities.filter((activity) => activity.id !== id))
 }
 
 useEffect(() => {
@@ -38,8 +50,8 @@ useEffect(() => {
   return (
     <>   
       <h1>{weather.condition}{weather.temperature}</h1>
+      <List activities={weather.isGoodWeather? goodWeatherActivities: badWeatherActivities } title={listTitle} onDeleteActivity={handleDeleteActivity}  />
       <Form onAddActivity={handleAddActivity}/>
-      <List activities={weather.isGoodWeather? goodWeatherActivities: badWeatherActivities } title={listTitle} />
     </>
   )
 }
