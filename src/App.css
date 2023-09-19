@@ -1,0 +1,22 @@
+.App {
+  background-image: url(./assets/bad-weather.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+}
+
+.App.m-good-weather {
+  background-image: url(./assets/good-weather.jpg);
+}
+
+.App__container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 32px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3);
+}

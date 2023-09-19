@@ -1,0 +1,16 @@
+.List {
+  margin: 16px 0 0;
+}
+
+.List__item {
+  list-style: none;
+  margin: 8px 0 0;
+  background-color: #a1d0e1;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.List__item__container {
+  display: flex;
+  justify-content: space-between;
+}
