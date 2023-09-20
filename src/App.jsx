@@ -20,7 +20,7 @@ function App() {
 
   const fetchWeather = async () => {
     const response = await fetch(
-      "https://example-apis.vercel.app/api/weather/sahara"
+      "https://example-apis.vercel.app/api/weather/rainforest"
     );
     const weatherRainforest = await response.json();
     setWeather(weatherRainforest);

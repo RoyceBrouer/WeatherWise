@@ -10,21 +10,37 @@
   flex-direction: column;
 }
 
+.Form__fieldset label {
+  background: var(--soft-pink);
+  width: max-content;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px white;
+ }
+
 .Form__fieldset-checkbox {
   flex-direction: row;
 }
 
 .Form__fieldset-checkbox input {
   margin: 0 0 0 8px;
+ 
 }
 
 .Form__fieldset input {
   padding: 8px;
+  margin: 4px 0 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 2px solid white;
+  box-shadow: 0 0 20px white;
+  background: transparent;
+  background-color: var(--soft-pink);
 }
 
 .Form__button {
   margin: 16px 0 0;
-  background-color: #a1d0e1;
+  /*background-color: #a1d0e1;*/
+  background-color: rgba(248, 205, 245, 0.6);
+  border: 2px solid white;
+  box-shadow: 0 0 20px white;
 }
