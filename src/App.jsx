@@ -57,7 +57,7 @@ function App() {
   }, [weather]);
 
   return (
-    <div className={`App ${weather.isGoodWeather ? "m-good-weather" : ""}`}>
+    <div className={`App ${weather.isGoodWeather ? "m-good-weather" : "m-bad-weather"}`}>
       <div className="App__container">
         <h1 className="App__weatherTitle">
           {weather.condition} {weather.temperature}

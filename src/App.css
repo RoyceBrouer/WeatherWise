@@ -1,11 +1,14 @@
 .App {
-  background-image: url(./assets/bad-weather.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
+}
+
+.App.m-bad-weather {
+  background-image: url(./assets/bad-weather.jpg);
 }
 
 .App.m-good-weather {
